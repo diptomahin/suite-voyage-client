@@ -1,10 +1,13 @@
 import Gallery from "../../Components/Gallery";
+import Promotion from "../../Components/Promotion";
 
 
 const Home = () => {
   return (
-    <div>
+    <div className="py-10">
+      <Promotion></Promotion>
       <Gallery></Gallery>
+      
     </div>
   );
 };

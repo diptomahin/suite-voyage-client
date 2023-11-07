@@ -1,6 +1,21 @@
+import { useContext } from "react";
 import {Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../Providers/AuthProvider";
 
 const NavBar = () => {
+
+
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleSignOut = () => {
+        logOut()
+            .then()
+            .catch()
+    }
+
+
+
+
     const NavLinks = <>
     <li className="text-lg font-semibold"><NavLink style={({ isActive }) => {
             return {
@@ -23,10 +38,20 @@ const NavBar = () => {
 
             };
         }} to="/myBookings">My Bookings</NavLink></li>
-    <li  className="text-lg font-semibold text-[#D49B35] border-[#D49B35] btn bg-[#1E2C1A] "><Link to="/login"><button >Login</button></Link></li>
+     {
+                    user ?
+                        <div className="flex flex-col lg:flex-row gap-1">
+                            <img className="rounded-3xl w-14 h-11" src={user?.photoURL} alt="" />
+                            <p className=" my-auto">{user?.displayName}</p>
+                            <button onClick={handleSignOut} className="btn text-[#D49B35] hover:text-white hover:bg-[#004AAD]">Sign Out</button>
+                        </div>
+                        :
+                        <li  className="text-lg font-semibold text-[#D49B35] border-[#D49B35] btn bg-[#1E2C1A] "><Link to="/login">Login</Link></li>
+                }
+    
     </> 
     return (
-        <div className="navbar lg:rounded-xl bg-[#1E2C1A] lg:w-11/12 lg:my-4 lg:mx-auto">
+        <div className="navbar lg:w-11/12 lg:mx-auto lg:rounded-lg bg-[#1E2C1A]  lg:my-4 ">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -38,7 +63,7 @@ const NavBar = () => {
                 </div>
                 <div className="flex items-center px-4">
                 <img className="w-20 h-15" src="https://i.ibb.co/R36SZtG/Sv-removebg-preview.png" alt="" />
-                <h1 className="text-[#D49B35] font-bold text-3xl">SuiteVoyage</h1>
+                <h1 className="text-[#D49B35] font-bold text-2xl">SuiteVoyage</h1>
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex ">

@@ -3,7 +3,7 @@ const Footer = () => {
     return (
         <footer className="footer lg:w-11/12 h-full mx-auto mt-7 pt-5 footer-center  bg-[#1E2C1A] text-[#D49B35]">
         <aside>
-         <img src="https://i.ibb.co/R36SZtG/Sv-removebg-preview.png" alt="" />
+         <img className="w-20 h-20" src="https://i.ibb.co/R36SZtG/Sv-removebg-preview.png" alt="" />
           <p className="font-bold">
            Voyage Industries Ltd. <br/>Providing reliable service since 1992
           </p> 

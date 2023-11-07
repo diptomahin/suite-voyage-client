@@ -2,31 +2,43 @@
 const Gallery = () => {
 
     return (
-        <div>
-            
-            <div>
-                <img src="https://i.ibb.co/DCFCL2k/room-8.jpg" alt="" />
+        <div className="carousel w-11/12 ml-12">
+            <div id="slide1" className="carousel-item relative w-full">
+                <img src="https://i.ibb.co/whN82Cz/pexels-engin-akyurt-3688261.jpg" className="" />
+                <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide4" className="btn btn-circle">❮</a>
+                    <a href="#slide2" className="btn btn-circle">❯</a>
+                </div>
+                <div className="absolute bottom-8 bg-black opacity-.25">
+                </div>
             </div>
-            <div>
-                <img src="https://i.ibb.co/SNNvdG0/room-7.jpg" alt="" />
+            <div id="slide2" className="carousel-item relative w-full">
+                <img src="https://i.ibb.co/RbSLr0Q/pexels-jean-van-der-meulen-1454806.jpg" className="w-full" />
+                <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide1" className="btn btn-circle">❮</a>
+                    <a href="#slide3" className="btn btn-circle">❯</a>
+                </div>
             </div>
-            <div>
-                <img src="https://i.ibb.co/h2rHmhT/room-6.jpg" alt="" />
+            <div id="slide3" className="carousel-item relative w-full">
+                <img src="https://i.ibb.co/XpXJcP5/pexels-quark-studio-3201921.jpg" className="w-full" />
+                <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide2" className="btn btn-circle">❮</a>
+                    <a href="#slide4" className="btn btn-circle">❯</a>
+                </div>
             </div>
-            <div>
-                <img src="https://i.ibb.co/WPTknTh/room-5.jpg" alt="" />
+            <div id="slide4" className="carousel-item relative w-full">
+                <img src="https://i.ibb.co/D4XdSx2/pexels-pixabay-237371.jpg" className="w-full" />
+                <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide3" className="btn btn-circle">❮</a>
+                    <a href="#slide5" className="btn btn-circle">❯</a>
+                </div>
             </div>
-            <div>
-                <img src="https://i.ibb.co/GTQwwNx/room-4.jpg" alt="" />
-            </div>
-            <div>
-                <img src="https://i.ibb.co/YRvtC0V/room-3.jpg" alt="" />
-            </div>
-            <div>
-                <img src="https://i.ibb.co/z7q9xr2/room-2.jpg" alt="" />
-            </div>
-            <div>
-                <img src="https://i.ibb.co/cxgLVHK/room-1.jpg" alt="" />
+            <div id="slide5" className="carousel-item relative w-full">
+                <img src="https://i.ibb.co/BNvdfDG/pexels-pixabay-262048.jpg" className="w-full" />
+                <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide4" className="btn btn-circle">❮</a>
+                    <a href="#slide1" className="btn btn-circle">❯</a>
+                </div>
             </div>
         </div>
     );

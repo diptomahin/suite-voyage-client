@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import {Link, NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 
 const NavBar = () => {
@@ -17,39 +17,38 @@ const NavBar = () => {
 
 
     const NavLinks = <>
-    <li className="text-lg font-semibold"><NavLink style={({ isActive }) => {
+        <li className="text-lg font-semibold"><NavLink style={({ isActive }) => {
             return {
                 color: isActive ? "#1E2C1A" : "white",
                 backgroundColor: isActive ? "#D49B35" : "",
 
             };
         }} to="/">Home</NavLink></li>
-    <li  className="text-lg font-semibold"><NavLink style={({ isActive }) => {
+        <li className="text-lg font-semibold"><NavLink style={({ isActive }) => {
             return {
                 color: isActive ? "#1E2C1A" : "white",
                 backgroundColor: isActive ? "#D49B35" : "",
 
             };
         }} to="/rooms">Rooms</NavLink></li>
-    <li  className="text-lg font-semibold"><NavLink style={({ isActive }) => {
+        <li className="text-lg font-semibold"><NavLink style={({ isActive }) => {
             return {
                 color: isActive ? "#1E2C1A" : "white",
                 backgroundColor: isActive ? "#D49B35" : "",
 
             };
         }} to="/myBookings">My Bookings</NavLink></li>
-     {
-                    user ?
-                        <div className="flex flex-col lg:flex-row gap-1">
-                            <img className="rounded-3xl w-14 h-11" src={user?.photoURL} alt="" />
-                            <p className=" my-auto">{user?.displayName}</p>
-                            <button onClick={handleSignOut} className="btn text-[#D49B35] hover:text-white hover:bg-[#004AAD]">Sign Out</button>
-                        </div>
-                        :
-                        <li  className="text-lg font-semibold text-[#D49B35] border-[#D49B35] btn bg-[#1E2C1A] "><Link to="/login">Login</Link></li>
-                }
-    
-    </> 
+        {
+            user ?
+                <div className="flex flex-col lg:flex-row gap-1">
+
+                    <button onClick={handleSignOut} className="text-lg font-semibold text-[#D49B35] border-[#D49B35] btn bg-[#1E2C1A]">Sign Out</button>
+                </div>
+                :
+                <button className="text-lg font-semibold text-[#D49B35] border-[#D49B35] btn bg-[#1E2C1A] "><Link to="/login">Login</Link></button>
+        }
+
+    </>
     return (
         <div className="navbar lg:w-11/12 lg:mx-auto lg:rounded-lg bg-[#1E2C1A]  lg:my-4 ">
             <div className="navbar-start">
@@ -62,17 +61,26 @@ const NavBar = () => {
                     </ul>
                 </div>
                 <div className="flex items-center px-4">
-                <img className="w-20 h-15" src="https://i.ibb.co/R36SZtG/Sv-removebg-preview.png" alt="" />
-                <h1 className="text-[#D49B35] font-bold text-2xl">SuiteVoyage</h1>
+                    <img className="w-20 h-15" src="https://i.ibb.co/R36SZtG/Sv-removebg-preview.png" alt="" />
+                    <h1 className="text-[#D49B35] font-bold text-2xl">SuiteVoyage</h1>
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex ">
                 <ul className="menu menu-horizontal px-1">
-                   {NavLinks}
+                    {NavLinks}
                 </ul>
             </div>
             <div className="navbar-end">
-               
+                {
+                    user ?
+                    <div>
+                        <img src={user?.photoURL} alt="" />
+                        <h2 className="text-lg text-[#D49B35]">{user?.displayName}</h2>
+                    </div>
+                      :
+                    <div></div>
+                    
+                }
             </div>
         </div>
     );

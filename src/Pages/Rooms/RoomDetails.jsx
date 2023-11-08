@@ -23,6 +23,18 @@ const RoomDetails = () => {
 
         console.log(bookedRoom);
 
+        fetch('http://localhost:5000/bookings', {
+           method: "POST", 
+           headers: {
+            'content-type' : 'application/json'
+           },
+           body: JSON.stringify(bookedRoom)
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data)
+        })
+
     }
     return (
         <div className="w-11/12 mx-auto bg-[#1E2C1A] text-[#D49B35] rounded-lg">

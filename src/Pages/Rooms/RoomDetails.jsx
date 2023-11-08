@@ -12,14 +12,15 @@ const RoomDetails = () => {
         event.preventDefault();
         const form = event.target;
         const RoomId = _id
+        const date = form.date.value;
         const Type = form.type.value;
         const Number=form.number.value;
         const Price = form.price.value;
         const Name = user.displayName;
-        const Email = form.email.value;
+        const email = form.email.value;
         const Image = img;
 
-        const bookedRoom = {RoomId, Type ,Name, Number, Price, Email, Image }
+        const bookedRoom = {RoomId, Type ,Name, Number, Price, email,date, Image }
 
         console.log(bookedRoom);
 

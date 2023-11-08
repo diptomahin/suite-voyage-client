@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const Promotion = () => {
     return (
@@ -14,7 +15,7 @@ const Promotion = () => {
                         <li>Flexible Booking</li>
                         <li>No cancellation fees!</li>
                     </ul>
-                    <button className="btn my-7 ">Book Now</button>
+                   <Link to='/rooms'><button className="btn my-7 ">Book Now</button></Link>
                 </div>
             </div>
         </div>

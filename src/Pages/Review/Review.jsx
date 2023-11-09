@@ -1,15 +1,29 @@
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const Review = () => {
+    const {user} = useContext(AuthContext)
+
     const handleReview=(event)=> {
         event.preventDefault();
         const form = event.target;
-        console.log(form)
         const UserName = form.UserName.value;
         const Rating = form.rating.value;
         const Comment = form.comment.value;
         const Email = form.email.value;
         const review = {UserName,Rating,Comment,Email};
-        console.log(review)
+
+        fetch(`http://localhost:5000/review`, {
+           method: "POST", 
+           headers: {
+            'content-type' : 'application/json'
+           },
+           body: JSON.stringify(review)
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data)
+        })
     }
     return (
         <div className="w-11/12 mx-auto bg-[#1E2C1A] text-[#D49B35] rounded-lg">
@@ -43,7 +57,7 @@ const Review = () => {
                                     <span className="label-text">User Name</span>
                                 </label>
                                 <label className="input-group">
-                                    <input type="text" name="UserName" placeholder="User Name" className="input input-bordered w-full" />
+                                    <input type="text" name="UserName" defaultValue={user?.displayName} placeholder="User Name" className="input input-bordered w-full" />
                                 </label>
                             </div>
                             <div className="form-control md:w-1/2">

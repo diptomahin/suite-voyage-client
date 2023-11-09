@@ -2,6 +2,7 @@
 import {  useParams } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { useContext, useEffect, useState } from "react";
+import Swal from 'sweetalert2'
 
 const Update = () => {
     const { user} = useContext(AuthContext);
@@ -51,7 +52,16 @@ const Update = () => {
         .then(res=>res.json())
         .then(data=>{
             console.log(data)
+            if(data.modifiedCount){
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Booking Updated',
+                    icon: 'success',
+                    confirmButtonText: 'Done'
+                  })
+            }
         })
+    
   }
    return( 
     <div className="w-11/12 mx-auto bg-[#1E2C1A] text-[#D49B35] rounded-lg">

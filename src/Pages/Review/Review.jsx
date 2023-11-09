@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { useParams } from "react-router-dom";
+import Swal from 'sweetalert2'
 
 const Review = () => {
     const {user} = useContext(AuthContext)
@@ -26,6 +27,14 @@ const Review = () => {
         .then(res=>res.json())
         .then(data=>{
             console.log(data)
+            if(data.insertedId){
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Review Added',
+                    icon: 'success',
+                    confirmButtonText: 'Done'
+                  })
+            }
         })
     }
     return (

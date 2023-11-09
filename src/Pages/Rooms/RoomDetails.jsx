@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from './../../Providers/AuthProvider';
 import RoomReview from "../../Components/RoomReview";
-
+import Swal from 'sweetalert2'
 const RoomDetails = () => {
     const { user } = useContext(AuthContext);
     console.log(user)
@@ -35,6 +35,14 @@ const RoomDetails = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
+                if(data.insertedId){
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Booking Confirmed',
+                        icon: 'success',
+                        confirmButtonText: 'Done'
+                      })
+                }
             })
 
 

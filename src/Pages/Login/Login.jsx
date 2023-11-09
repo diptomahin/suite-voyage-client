@@ -3,7 +3,6 @@ import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 
-
 const Login = () => {
     const { signIn, handleGoogleSignIn } = useContext(AuthContext);
     const location = useLocation();
@@ -25,12 +24,13 @@ const Login = () => {
             .then(result => {
                 console.log(result.user)
                 navigate(location?.state ? location.state : '/');
-
             })
             .catch(error => {
                 console.log(error.message);
                 setErrorMessage(error.message);
             })
+           
+           
        
 
     }

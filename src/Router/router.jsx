@@ -9,6 +9,7 @@ import Register from "../Pages/Login/Register";
 import RoomDetails from "../Pages/Rooms/RoomDetails";
 import PrivetRoute from "./privateRoute";
 import Update from "../Pages/Update/Update";
+import Review from "../Pages/Review/Review";
 
 
 const router = createBrowserRouter([
@@ -38,6 +39,11 @@ const router = createBrowserRouter([
         {
             path: "/update/:id",
             element:<PrivetRoute><Update></Update></PrivetRoute>,
+           
+        },
+        {
+            path: "/review/:id",
+            element:<PrivetRoute><Review></Review></PrivetRoute>,
            
         },
         {

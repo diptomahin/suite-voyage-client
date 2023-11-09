@@ -55,8 +55,10 @@ const Update = () => {
   }
    return( 
     <div className="w-11/12 mx-auto bg-[#1E2C1A] text-[#D49B35] rounded-lg">
+        <h1 className="text-center font-bold text-3xl py-6">Update Booking</h1>
     <h3 className="text-center font-bold text-2xl py-6"> Room Type : {Type}</h3>
     <div className="p-9">
+        
         <div className="grid grid-cols-2 py-7">
             <div className="w-80">
                 <table className="table">

@@ -70,10 +70,10 @@ const NavBar = () => {
                     {NavLinks}
                 </ul>
             </div>
-            <div className="navbar-end">
+            <div className="navbar-end ">
                 {
                     user ?
-                    <div className="items-center text-center">
+                    <div className="items-center text-center hidden lg:flex">
                         <img className="w-1/2 h-1/2 rounded-2xl" src={user?.photoURL} alt="" />
                         <h2 className="text-lg text-[#D49B35]">{user?.displayName}</h2>
                     </div>

@@ -1,17 +1,20 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import { useParams } from "react-router-dom";
 
 const Review = () => {
     const {user} = useContext(AuthContext)
-
+    const id = useParams()
     const handleReview=(event)=> {
         event.preventDefault();
         const form = event.target;
+        const RoomId = id;
         const UserName = form.UserName.value;
         const Rating = form.rating.value;
         const Comment = form.comment.value;
         const Email = form.email.value;
-        const review = {UserName,Rating,Comment,Email};
+        const review = {UserName,Rating,Comment,Email,RoomId};
+        console.log(review)
 
         fetch(`http://localhost:5000/review`, {
            method: "POST", 
@@ -28,7 +31,6 @@ const Review = () => {
     return (
         <div className="w-11/12 mx-auto bg-[#1E2C1A] text-[#D49B35] rounded-lg">
             <h1 className="text-center font-bold text-3xl py-6">Post Review</h1>
-            {/* <h3 className="text-center font-bold text-2xl py-6"> Room Type : {Type}</h3> */}
             <div className="p-9">
 
                 <div className="grid grid-cols-2 py-7">
@@ -81,7 +83,7 @@ const Review = () => {
                                     <span className="label-text">Email</span>
                                 </label>
                                 <label className="input-group">
-                                    <input type="email" name="email" placeholder="email" className="input input-bordered w-full" />
+                                    <input type="email" name="email" defaultValue={user?.email} placeholder="email" className="input input-bordered w-full" />
                                 </label>
                             </div>
 

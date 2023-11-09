@@ -1,5 +1,6 @@
 
 import { PropTypes } from 'prop-types';
+import { Link } from 'react-router-dom';
 const BookingRow = ({booking ,handleDelete}) => {
     const { _id ,Type, Number, Price, Image,date } = booking
     return (
@@ -25,7 +26,7 @@ const BookingRow = ({booking ,handleDelete}) => {
         <td>{date}</td>
         <td>${Price}</td>
         <td className='grid grid-cols-1 gap-3'>
-            <button className='btn btn-success'>Update</button>
+            <Link to={`/update/${_id}`}><button className='btn btn-success'>Update</button></Link>
             <button className='btn btn-warning'>Review</button>
         </td>
     </tr>
@@ -34,8 +35,9 @@ const BookingRow = ({booking ,handleDelete}) => {
 };
 
 BookingRow.propTypes ={
-  booking: PropTypes.array,
-  handleDelete: PropTypes.function
+  booking: PropTypes.object,
+  handleDelete: PropTypes.function,
+  handleBookingConfirm: PropTypes
     
   }
 

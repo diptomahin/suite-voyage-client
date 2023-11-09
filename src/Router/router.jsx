@@ -8,6 +8,7 @@ import Login from "../Pages/Login/Login";
 import Register from "../Pages/Login/Register";
 import RoomDetails from "../Pages/Rooms/RoomDetails";
 import PrivetRoute from "./privateRoute";
+import Update from "../Pages/Update/Update";
 
 
 const router = createBrowserRouter([
@@ -33,6 +34,11 @@ const router = createBrowserRouter([
         {
             path: "/myBookings",
             element:<PrivetRoute><MyBookings></MyBookings></PrivetRoute>
+        },
+        {
+            path: "/update/:id",
+            element:<PrivetRoute><Update></Update></PrivetRoute>,
+           
         },
         {
             path: "/login",

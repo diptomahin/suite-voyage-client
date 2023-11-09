@@ -29,8 +29,10 @@ const MyBookings = () => {
                 }
             })
 
-    }
+        }
 
+
+   
 
     return (
         <div >
@@ -58,7 +60,8 @@ const MyBookings = () => {
                                  key={booking._id} 
                                  booking={booking}
                                  handleDelete={handleDelete}
-                                 ></BookingRow>)
+                               
+                             ></BookingRow>)
                         }
                     </tbody>
 

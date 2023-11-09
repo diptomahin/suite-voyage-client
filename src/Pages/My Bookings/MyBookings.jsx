@@ -9,7 +9,7 @@ const MyBookings = () => {
     const [bookings, setBookings] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/bookings?email=${user?.email}`)
+        fetch(`https://suite-voyage-server-ij9ribipj-mahin-ahmeds-projects.vercel.app/bookings?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setBookings(data))
         // console.log(bookings)
@@ -31,7 +31,7 @@ const MyBookings = () => {
                 if (result.isConfirmed==true) {
     
     
-                    fetch(`http://localhost:5000/bookings/${_id}`, {
+                    fetch(`https://suite-voyage-server-ij9ribipj-mahin-ahmeds-projects.vercel.app/bookings/${_id}`, {
                         method: 'DELETE'
                     })
                         .then(res => res.json())

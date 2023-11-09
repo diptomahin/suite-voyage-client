@@ -25,7 +25,7 @@ const RoomDetails = () => {
 
         console.log(bookedRoom);
 
-        fetch('http://localhost:5000/bookings', {
+        fetch('https://suite-voyage-server-ij9ribipj-mahin-ahmeds-projects.vercel.app/bookings', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

@@ -17,7 +17,7 @@ const Review = () => {
         const review = {UserName,Rating,Comment,Email,RoomId};
         console.log(review)
 
-        fetch(`http://localhost:5000/review`, {
+        fetch(`https://suite-voyage-server-ij9ribipj-mahin-ahmeds-projects.vercel.app/review`, {
            method: "POST", 
            headers: {
             'content-type' : 'application/json'

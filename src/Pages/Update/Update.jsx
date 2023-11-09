@@ -11,7 +11,7 @@ const Update = () => {
    useEffect(() => {
     // declare the data fetching function
     const fetchData = async () => {
-      const response = await fetch(`http://localhost:5000/bookings?email=${user?.email}`)
+      const response = await fetch(`https://suite-voyage-server-ij9ribipj-mahin-ahmeds-projects.vercel.app/bookings?email=${user?.email}`)
       const data =await response.json()
       setUpdateBookings(data)
     }

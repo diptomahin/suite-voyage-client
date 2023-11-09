@@ -27,7 +27,7 @@ const BookingRow = ({booking ,handleDelete}) => {
         <td>${Price}</td>
         <td className='grid grid-cols-1 gap-3'>
             <Link to={`/update/${_id}`}><button className='btn btn-success'>Update</button></Link>
-            <button className='btn btn-warning'>Review</button>
+            <Link to='/ho'><button className='btn btn-warning'>Review</button></Link>
         </td>
     </tr>
 );

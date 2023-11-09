@@ -2,7 +2,9 @@
 const Gallery = () => {
 
     return (
-        <div className="carousel w-11/12 ml-7  md:ml-12 py-14">
+        <div data-aos="fade-right"
+        data-aos-offset="300"
+        data-aos-easing="ease-in-sine" className="carousel w-11/12 ml-7  md:ml-12 py-14">
             <div id="slide1" className="carousel-item relative w-full">
                 <img src="https://i.ibb.co/whN82Cz/pexels-engin-akyurt-3688261.jpg" className="" />
                 <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">

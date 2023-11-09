@@ -1,7 +1,10 @@
 
 const NewsLetter = () => {
     return (
-        <div style={{ backgroundImage: 'url(https://i.ibb.co/BNvdfDG/pexels-pixabay-262048.jpg)' }}
+        <div  data-aos="flip-left"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="2000"
+         style={{ backgroundImage: 'url(https://i.ibb.co/BNvdfDG/pexels-pixabay-262048.jpg)' }}
          className="flex hero lg:w-11/12 mx-auto mb-10 py-20 flex-col items-center justify-center  text-[#1E2C1A]">
              <div className="hero-overlay bg-opacity-60"></div>
             <h2 className="text-3xl font-bold mb-4">Let s keep in touch</h2>

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Promotion = () => {
     return (
-        <div className="hero w-11/12 mx-auto min-h-screen" style={{ backgroundImage: 'url(https://i.ibb.co/6RdZNDB/pexels-jonas-togo-2907196.jpg)' }}>
+        <div data-aos="zoom-in" className="hero w-11/12 mx-auto min-h-screen" style={{ backgroundImage: 'url(https://i.ibb.co/6RdZNDB/pexels-jonas-togo-2907196.jpg)' }}>
             <div className="hero-overlay bg-opacity-60"></div>
             <div className="hero-content text-center text-neutral-content">
                 <div className="max-w-md">
